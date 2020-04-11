@@ -1,0 +1,60 @@
+version: "3.2"
+services:
+    minecraft:
+        image: papermc-server:latest
+        ports:
+            - "27015:25565"
+            - "27016:25575"
+        volumes:
+            - type: bind
+              source: ./world
+              target: /minecraft/world
+            - type: bind
+              source: ./world_nether
+              target: /minecraft/world_nether
+            - type: bind
+              source: ./world_the_end
+              target: /minecraft/world_the_end
+            - type: bind
+              source: ./plugins
+              target: /minecraft/plugins
+            - type: bind
+              source: ./server.properties
+              target: /minecraft/server.properties
+            - type: bind
+              source: ./ops.json
+              target: /minecraft/ops.json           
+            - type: bind
+              source: ./whitelist.json
+              target: /minecraft/whitelist.json
+            - type: bind
+              source: ./banned-ips.json
+              target: /minecraft/banned-ips.json           
+            - type: bind
+              source: ./banned-players.json
+              target: /minecraft/banned-players.json
+            - type: bind
+              source: ./bukkit.yaml
+              target: /minecraft/bukkit.yaml
+            - type: bind
+              source: ./commands.yaml
+              target: /minecraft/commands.yaml
+            - type: bind
+              source: ./help.yaml
+              target: /minecraft/help.yaml
+            - type: bind
+              source: ./paper.yaml
+              target: /minecraft/paper.yaml
+            - type: bind
+              source: ./permissions.yaml
+              target: /minecraft/permissions.yaml
+            - type: bind
+              source: ./spigot.yaml
+              target: /minecraft/spigot.yaml
+            - type: bind
+              source: ./version_history.json
+              target: /minecraft/version_history.json
+            - type: bind
+              source: ./usercache.json
+              target: /minecraft/usercache.json
+            
